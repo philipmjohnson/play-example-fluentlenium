@@ -29,9 +29,12 @@ public class IndexPage extends FluentPage {
     assert(title().equals("Index"));
   }
   
-  public void submitForm() {
-    fill("#name").with("My Name");
-    find("select", withId().equalTo("gender")).find("option", withText().equalTo("Female")).click();
+  public void submitForm(String name, String gender) {
+    // Fill the input field with id "name" with the passed name string.
+    fill("#name").with(name);
+    // Find the menu with id "gender", and click the menu item equal to the passed gender string.
+    find("select", withId().equalTo("gender")).find("option", withText().equalTo(gender)).click();
+    //Submit the form whose id is "submit"
     submit("#submit");
   }
   

@@ -17,8 +17,11 @@ public class IntegrationTest {
           public void invoke(TestBrowser browser) {
             IndexPage indexPage = new IndexPage(browser.getDriver(), 3333);
             browser.goTo(indexPage);
-            indexPage.submitForm();
-            assertThat(browser.pageSource()).contains("Last Gender: female");
+            String name = "Test Name";
+            String gender = "Female";
+            indexPage.submitForm(name, gender);
+            assertThat(browser.pageSource()).contains("Last Gender: " + gender);
+            assertThat(browser.pageSource()).contains("Last Name: " + name);
           }
         });
   }
