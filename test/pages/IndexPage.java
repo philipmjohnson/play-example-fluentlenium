@@ -2,8 +2,10 @@ package pages;
 
 import org.fluentlenium.core.FluentPage;
 import org.openqa.selenium.WebDriver;
-import static org.fluentlenium.core.filter.FilterConstructor.withId;
-import static org.fluentlenium.core.filter.FilterConstructor.withText;
+// Although Eclipse marks the following two methods as deprecated, 
+// the no-arg versions of the methods used here are not deprecated.  (as of May, 2013).
+import static org.fluentlenium.core.filter.FilterConstructor.withText; 
+import static org.fluentlenium.core.filter.FilterConstructor.withId;  
 
 /**
  * Illustration of the Page Object Pattern in Fluentlenium.  
@@ -29,7 +31,7 @@ public class IndexPage extends FluentPage {
   
   public void submitForm() {
     fill("#name").with("My Name");
-    find("select", withId("gender")).find("option", withText("Female")).click();
+    find("select", withId().equalTo("gender")).find("option", withText().equalTo("Female")).click();
     submit("#submit");
   }
   
