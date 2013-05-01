@@ -1,0 +1,19 @@
+@(personForm: Form[models.Person], person: String, gender: String)
+
+@import helper._
+@main("Index") {
+
+<h1>Fluentlenium and Play Test Example</h1>   
+ 
+@form(routes.Application.submit()) {
+  Name: <input type="text" id="name" name="name" value="">
+  Gender: <select id="gender" name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+  <input id="submit" type="submit" value="Submit">
+  }
+  
+<p>Here is the data from the last form submission (if any):</p>
+Last Name: @person, Last Gender: @gender
+}
