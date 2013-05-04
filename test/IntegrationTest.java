@@ -1,7 +1,7 @@
 import org.junit.Test;
 import play.test.TestBrowser;
 import play.libs.F.Callback;
-import static play.test.Helpers.HTMLUNIT;
+import static play.test.Helpers.FIREFOX;
 import static play.test.Helpers.inMemoryDatabase;
 import static play.test.Helpers.fakeApplication;
 import static play.test.Helpers.testServer;
@@ -12,7 +12,7 @@ import pages.IndexPage;
 public class IntegrationTest {
   @Test
   public void test() {
-    running(testServer(3333, fakeApplication(inMemoryDatabase())), HTMLUNIT,
+    running(testServer(3333, fakeApplication(inMemoryDatabase())), FIREFOX,
         new Callback<TestBrowser>() {
           public void invoke(TestBrowser browser) {
             IndexPage indexPage = new IndexPage(browser.getDriver(), 3333);
