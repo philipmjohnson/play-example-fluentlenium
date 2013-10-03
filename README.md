@@ -5,5 +5,6 @@ A simple Play application illustrating the use of Fluentlenium for testing. Illu
 
   * Page Object Pattern.
   * How to select an item from a pulldown menu as part of a test case.
+  * This works with play version 2.1.
 
 
